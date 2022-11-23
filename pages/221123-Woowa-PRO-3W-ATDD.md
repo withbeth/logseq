@@ -76,13 +76,14 @@
 	- @SpringBootTest
 	  collapsed:: true
 		- **Automatically** searches for a @SpringBootConfig
+		  collapsed:: true
 			- No need to use @ContextConfig anymore.
 			- 따라서, 실제 웹에서 사용중인 Spring Bean들을 테스트에서도 손쉽게 사용가능하다
 		- Provides support for different web env modes
-			- RANDOM_PORT
-			- DEFINED_PORT
-			- MOCK
-			- NON
+			- RANDOM_PORT : 실제 웹 환경 구성
+			- DEFINED_PORT : 지정한 포트를 listen하는 실제 웹 환경 구성
+			- MOCK : Mocking된 웹 환경 구성. MockMvc를 사용한 테스트 진행 가능
+			- NONE : 아무런 웹 환경 구성하지 않는다
 		- Server gets started by the testing framework
 		- Auto-configures a TestRestTemplate
 			- Conveneient alter of RestTemplate
@@ -133,5 +134,11 @@
 	-
 	-
 - ## QnA
-	- Q: 왜 RandomPort를 쓰는지?
+	- Q: 왜 SpringBootTest.webEnv에 RandomPort를 쓰는지? 포트 설정 없이도 테스트 가능하지 않나?
+		- RandomPort, DefinedPort는 내장 tomcat을 사용한다
+		- ```java
+		  ```
+	- Q: 왜 DTO를 안쓰고 Map을 써서 인수테스트 진행하는지?
+		- 실제 프로덕션 코드와의 의존성 분리를 위해서.
+		- 블랙박스 테스트를 위해서.
 - ## Note
