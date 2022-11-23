@@ -190,4 +190,5 @@
 			- with @SpringBootTest webEnv.RANDOM_PORT or DEFINED_PORT
 		- RestAssured
 			- 실제 Embedded web env(Tomcat)에서 테스트
+	- Q: RestAssured는 all static인가?
 - ## Note
