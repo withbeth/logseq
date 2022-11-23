@@ -1,4 +1,9 @@
 - AWS
   collapsed:: true
 	- https://ap-northeast-1.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=8UdaJjoD_Q0Rn9zzxUkhf_nQMQIp4ogueBtjM2uZ_vg&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_ap-northeast-1_15e1e3625baaa698&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIgf67wa9Q161HX2iRdtmPaIjQoXg3ZcGtNslawAEurJmcCIQCrYTqaLLXOzTDHcos5NQdxOBdD%2FUekWOffpT8YNqjAKSqTAgi%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAIaDDM5MDAzNzAwNjUwMSIMnN7YPGe0GIlhVK2CKucB2SrMDm4Yk7U4SYwsO5U1Nzw9iGRvXTDRVkvtGhmHUzk2MgrQx2clmPZDPIf%2B%2BbxmoZiM6jyqESVBaUmlq%2BSJ340gkHWhbJTSdxQXf7WjPBgjZKVHvqTvmidH4cahZB8ODCWiPp6IIyTKCCyvYbRTagl48yKCHMFHT%2BgzEkH4AYYB4X0TRCxmjcVAVWYrrOiyY9o9NePg5eVtXGgB5o9FH6ESVTQeJsVbVOXfa0vldqtairTL7WuGKv7RHYq%2BhoowHGZl8EN2wYSgoADe9gj79Yufre6oPQKQ9s6L%2FrN%2FFy19y3darSdNMKjG%2BJsGOo8B3PsIfwqK%2FxO3%2BpHwLYXn2aWZrVHsGyPnPFk2M%2FqAKiNeP1%2BrKrcfYiphC6qtWxjiQdL77pRZq4PFNocTrdEiQZs%2FWH5krd7qjo%2F41YYDgMVhtMAWPtkWL7iHrqPV6lLXktDHWSZ33iccniZr6xwe9PneNrhacMSvrUWIkTGuZqwEaciwvdZUMB%2BDDNtMDzc%3D&X-Amz-Date=20221123T141841Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAVVUAENCS7SRIRCUM%2F20221123%2Fap-northeast-1%2Fsignin%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=308bd300968d1fcf278e03035c22d816893492b341892fdfcbdf32a814ac0716
--
+- ## Assignment
+- ### Step0: generate pem key
+	- What is pem key?
+	- When to use pem key?
+	- Why we use pem key?
+	- How to generate?
