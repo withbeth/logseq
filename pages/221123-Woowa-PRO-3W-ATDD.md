@@ -44,6 +44,7 @@
 	- ATDD : 시나리오 형태의 요구사항 단위를 테스트를 통해 구현
 - ### How to start ATDD?
 	- #### Convert 요구사항 to 시나리오
+	  collapsed:: true
 		- 예) 콘솔 로또 게임 어플리케이션 요구사항
 			- 콘솔 기반의 로또 어플리케이션을 만든다
 			- 금액을 입력하면 금액에 맞는 갯수의 로또를 구입한다
@@ -71,6 +72,12 @@
 				- 지하철 역 목록 조회 요청을 한다
 				- 지하철 역 목록이 응답되었다
 				-
+	- #### ATDD Tools
+		- @SpringBootTest
+			- 테스트에 사용할 ApplicationContext를 쉽게 지정 가능
+			- 기존 @ContextConfiguration의 발전된 기능
+			- SpringApplication에서 사용하는 ApplicationContext를 생성해서 작동
+		- RestAssurd
 - ## Assignments
   collapsed:: true
 	- ### 이번 과정에서의 인수테스트 의도(목적)
