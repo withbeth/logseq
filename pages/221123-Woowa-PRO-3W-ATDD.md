@@ -80,6 +80,7 @@
 			- No need to use @ContextConfig anymore.
 			- 따라서, 실제 웹에서 사용중인 Spring Bean들을 테스트에서도 손쉽게 사용가능하다
 		- Provides support for different web env modes
+		  id:: 637df51b-551a-4d0f-b1fd-10ab3b0e4333
 			- RANDOM_PORT : 실제 웹 환경 구성
 			- DEFINED_PORT : 지정한 포트를 listen하는 실제 웹 환경 구성
 			- MOCK : Mocking된 웹 환경 구성. MockMvc를 사용한 테스트 진행 가능 (DEFAULT)
@@ -134,10 +135,15 @@
 	-
 	-
 - ## QnA
+	- Q: 왜 DTO를 안쓰고 Map을 써서 인수테스트 진행하는지?
+	  collapsed:: true
+		- 실제 프로덕션 코드와의 의존성 분리를 위해서.
+		- 블랙박스 테스트를 위해서.
 	- Q: 왜 SpringBootTest.webEnv에 RandomPort를 쓰는지? 포트 설정 없이도 테스트 가능하지 않나?
 	  collapsed:: true
+		- 실제 웹 환경에서의 테스트를 위해.
 		- RandomPort, DefinedPort는 embedded tomcat을 사용한다 (embedded=true)
-		- Default는 Mock이며, Mock사용시 실제 embedded tomcat사용하지 않고, 지정된 handlermapping된 method로 redirect만 시켜준다.
+		- Default는 Mock이며, Mock사용시 실제 embedded tomcat사용하지 않고, 지정된 handler mapping된 method로 redirect만 시켜준다.
 		- ```java
 		  	enum WebEnvironment {
 		  
@@ -172,19 +178,15 @@
 		        	...
 		  	}
 		  ```
-	- Q: 왜 DTO를 안쓰고 Map을 써서 인수테스트 진행하는지?
-		- 실제 프로덕션 코드와의 의존성 분리를 위해서.
-		- 블랙박스 테스트를 위해서.
 	- Q: 왜 RestAssured를 썼는지? MockMvc vs WebTestClient vs RestAssured
-		- Mocking된 환경말고, 실제 웹 환경(Tomcat)에서의 테스트를 위해.
+		- Mocking된 환경말고, 실제 웹 환경에서의 테스트를 위해.
+		- 또한, Dispatcher Servlet을 사용하는 MVC library의 해당 기본 웹서버인 Tomcat을 사용하기 위해.
 		- MockMvc
 			- mocking된 web env환경에서 테스트
 			- with @SpringBootTest webEnv.MOCK
 		- WebTestClient
 			- 실제 Embedded web env(Netty)에서  테스트
-				- Netty는
-				- Dispatcher Servelet을 사용하는 MVC library에 있는 게 아니라,
-				-
+				- Netty는 WebFlux Library의 기본 웹 서버.
 			- with @SpringBootTest webEnv.RANDOM_PORT or DEFINED_PORT
 		- RestAssured
 			- 실제 Embedded web env(Tomcat)에서 테스트
