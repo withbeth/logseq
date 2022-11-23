@@ -133,4 +133,5 @@
 	-
 	-
 - ## QnA
+	- Q: 왜 RandomPort를 쓰는지?
 - ## Note
