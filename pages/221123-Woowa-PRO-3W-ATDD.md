@@ -82,7 +82,7 @@
 		- Provides support for different web env modes
 			- RANDOM_PORT : 실제 웹 환경 구성
 			- DEFINED_PORT : 지정한 포트를 listen하는 실제 웹 환경 구성
-			- MOCK : Mocking된 웹 환경 구성. MockMvc를 사용한 테스트 진행 가능
+			- MOCK : Mocking된 웹 환경 구성. MockMvc를 사용한 테스트 진행 가능 (DEFAULT)
 			- NONE : 아무런 웹 환경 구성하지 않는다
 		- Server gets started by the testing framework
 		- Auto-configures a TestRestTemplate
@@ -135,10 +135,57 @@
 	-
 - ## QnA
 	- Q: 왜 SpringBootTest.webEnv에 RandomPort를 쓰는지? 포트 설정 없이도 테스트 가능하지 않나?
-		- RandomPort, DefinedPort는 내장 tomcat을 사용한다
+	  collapsed:: true
+		- RandomPort, DefinedPort는 embedded tomcat을 사용한다 (embedded=true)
+		- Default는 Mock이며, Mock사용시 실제 embedded tomcat사용하지 않고, 지정된 handlermapping된 method로 redirect만 시켜준다.
 		- ```java
+		  	enum WebEnvironment {
+		  
+		  		/**
+		  		 * Creates a {@link WebApplicationContext} with a mock servlet environment if
+		  		 * servlet APIs are on the classpath, a {@link ReactiveWebApplicationContext} if
+		  		 * Spring WebFlux is on the classpath or a regular {@link ApplicationContext}
+		  		 * otherwise.
+		  		 */
+		  		MOCK(false),
+		  
+		  		/**
+		  		 * Creates a web application context (reactive or servlet based) and sets a
+		  		 * {@code server.port=0} {@link Environment} property (which usually triggers
+		  		 * listening on a random port). Often used in conjunction with a
+		  		 * {@link LocalServerPort @LocalServerPort} injected field on the test.
+		  		 */
+		  		RANDOM_PORT(true),
+		  
+		  		/**
+		  		 * Creates a (reactive) web application context without defining any
+		  		 * {@code server.port=0} {@link Environment} property.
+		  		 */
+		  		DEFINED_PORT(true),
+		  
+		  		/**
+		  		 * Creates an {@link ApplicationContext} and sets
+		  		 * {@link SpringApplication#setWebApplicationType(WebApplicationType)} to
+		  		 * {@link WebApplicationType#NONE}.
+		  		 */
+		  		NONE(false);
+		        	...
+		  	}
 		  ```
 	- Q: 왜 DTO를 안쓰고 Map을 써서 인수테스트 진행하는지?
 		- 실제 프로덕션 코드와의 의존성 분리를 위해서.
 		- 블랙박스 테스트를 위해서.
+	- Q: 왜 RestAssured를 썼는지? MockMvc vs WebTestClient vs RestAssured
+		- Mocking된 환경말고, 실제 웹 환경(Tomcat)에서의 테스트를 위해.
+		- MockMvc
+			- mocking된 web env환경에서 테스트
+			- with @SpringBootTest webEnv.MOCK
+		- WebTestClient
+			- 실제 Embedded web env(Netty)에서  테스트
+				- Netty는
+				- Dispatcher Servelet을 사용하는 MVC library에 있는 게 아니라,
+				-
+			- with @SpringBootTest webEnv.RANDOM_PORT or DEFINED_PORT
+		- RestAssured
+			- 실제 Embedded web env(Tomcat)에서 테스트
 - ## Note
