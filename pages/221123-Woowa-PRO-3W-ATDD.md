@@ -72,12 +72,26 @@
 				- 지하철 역 목록 조회 요청을 한다
 				- 지하철 역 목록이 응답되었다
 				-
-	- #### ATDD Tools
-		- @SpringBootTest
-			- 테스트에 사용할 ApplicationContext를 쉽게 지정 가능
-			- 기존 @ContextConfiguration의 발전된 기능
-			- SpringApplication에서 사용하는 ApplicationContext를 생성해서 작동
-		- RestAssurd
+- ### Tools
+	- @SpringBootTest
+		- **Automatically** searches for a @SpringBootConfig
+			- No need to use @ContextConfig anymore.
+			- 따라서, 실제 웹에서 사용중인 Spring Bean들을 테스트에서도 손쉽게 사용가능하다
+		- Provides support for different web env modes
+			- RANDOM_PORT
+			- DEFINED_PORT
+			- MOCK
+			- NON
+		- Server gets started by the testing framework
+		- Auto-configures a TestRestTemplate
+			- Conveneient alter of RestTemplate
+			- Suitable for IT
+			- If you nee customizations, use RestTemplateBuilder
+			- ![image.png](../assets/image_1669199256279_0.png)
+		- Refer
+			- https://share.goodnotes.com/s/4TEB5UyGjmM9oBcgs9ZGQU
+			- https://share.goodnotes.com/s/CLpKfSslSA1aHTg4V4j7Sp
+	- RestAssurd
 - ## Assignments
   collapsed:: true
 	- ### 이번 과정에서의 인수테스트 의도(목적)
