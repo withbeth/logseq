@@ -99,8 +99,20 @@
 		- HTTP 작업에 대한 검증을 위한 풍부한 API제공
 		- ![IMG_725ECE97FE51-1.jpeg](../assets/IMG_725ECE97FE51-1_1669197814638_0.jpeg)
 		- ![IMG_6D4B3DFF9FB4-1.jpeg](../assets/IMG_6D4B3DFF9FB4-1_1669202117253_0.jpeg)
+	- JsonPath
+		- Java DSL for reading JSON doc
+		- XPath for JSON
+	- spring-boot-starter-test dependencies
+	  collapsed:: true
+		- Junit
+		- Spring Test & Spring Boot Test
+		- AssertJ
+		- Hamcrest
+		- Mockito
+		- JSONAssert
+		- JsonPath
+		-
 - ## Assignments
-  collapsed:: true
 	- ### 이번 과정에서의 인수테스트 의도(목적)
 		- API 접점에서 검증하는 E2E Test.
 		- API Request, Response의외의 내부 정보는 모른다고 가정한 블랙박스 테스트 형식으로 진행.
