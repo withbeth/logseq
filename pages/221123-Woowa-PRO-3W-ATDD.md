@@ -1,3 +1,4 @@
+- {{renderer :tocgen}}
 - ## What you will learn
 	- What, Why, How, Pros and Cons of ATDD
 	- ATDD vs UT
@@ -74,6 +75,7 @@
 				-
 - ### Tools
 	- @SpringBootTest
+	  collapsed:: true
 		- **Automatically** searches for a @SpringBootConfig
 			- No need to use @ContextConfig anymore.
 			- 따라서, 실제 웹에서 사용중인 Spring Bean들을 테스트에서도 손쉽게 사용가능하다
@@ -91,7 +93,12 @@
 		- Refer
 			- https://share.goodnotes.com/s/4TEB5UyGjmM9oBcgs9ZGQU
 			- https://share.goodnotes.com/s/CLpKfSslSA1aHTg4V4j7Sp
-	- RestAssurd
+	- RestAssured
+	  collapsed:: true
+		- RestAPI Server에 Sending Request, Validate Response
+		- HTTP 작업에 대한 검증을 위한 풍부한 API제공
+		- ![IMG_725ECE97FE51-1.jpeg](../assets/IMG_725ECE97FE51-1_1669197814638_0.jpeg)
+		- ![IMG_6D4B3DFF9FB4-1.jpeg](../assets/IMG_6D4B3DFF9FB4-1_1669202117253_0.jpeg)
 - ## Assignments
   collapsed:: true
 	- ### 이번 과정에서의 인수테스트 의도(목적)
@@ -115,6 +122,4 @@
 	-
 	-
 - ## QnA
-	- Q: What is RestAssured?
-		- ![IMG_725ECE97FE51-1.jpeg](../assets/IMG_725ECE97FE51-1_1669197814638_0.jpeg)
 - ## Note
