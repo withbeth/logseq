@@ -1,3 +1,4 @@
+- #training, #atdd
 - {{renderer :tocgen}}
 - ## What you will learn
 	- What, Why, How, Pros and Cons of ATDD
@@ -192,3 +193,4 @@
 			- 실제 Embedded web env(Tomcat)에서 테스트
 	- Q: RestAssured는 all static인가?
 - ## Note
+-
